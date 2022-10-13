@@ -1,16 +1,17 @@
-import { FC } from "react";
+import { FC, createContext, useState, useContext } from "react";
 import { heights } from "../constants";
+import ResultContext from "../contexts/Result";
 
 const AvgButton: FC = () => {
-
-  function calculateAvg() {
+  const { actions } = useContext(ResultContext);
+  const calculateAvg = () => {
     let sum = heights.reduce((a, c) => a + c);
-    console.log(sum / heights.length);
-  }
-  
+    return sum / heights.length;
+  };
+
   return (
     <div style={{ marginBottom: "10px" }}>
-      <button onClick={calculateAvg}>AVERAGE</button>
+      <button onClick={() => actions.setResult(calculateAvg())}>AVERAGE</button>
     </div>
   );
 };

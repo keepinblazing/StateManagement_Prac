@@ -1,11 +1,13 @@
-import { FC } from "react";
+import { FC, useContext } from "react";
 import Prac from "../components/Prac";
+import ResultContext from "../contexts/Result";
 
 const Home: FC = () => {
+  const { state } = useContext(ResultContext);
   return (
     <section id="">
       <p style={{ fontSize: "1.25rem", fontWeight: 700 }}>Context API Prac</p>
-      <span>Result: 0</span>
+      <span>Result: {state.result} </span>
       <Prac />
     </section>
   );
