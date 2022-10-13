@@ -2,4 +2,5 @@
 
 #### stack ####
 
-Just TypeScript
+1. React
+2. TypeScript
