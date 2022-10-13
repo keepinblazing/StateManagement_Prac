@@ -11,7 +11,7 @@ const ModeButton: FC = () => {
   return (
     <div style={{ marginBottom: "10px" }}>
       <button onClick={() => actions.setResult(calculateMode())}>
-        MODE(최빈값)
+        최소값
       </button>
     </div>
   );

@@ -11,7 +11,7 @@ const AvgButton: FC = () => {
 
   return (
     <div style={{ marginBottom: "10px" }}>
-      <button onClick={() => actions.setResult(calculateAvg())}>AVERAGE</button>
+      <button onClick={() => actions.setResult(calculateAvg())}>평균값</button>
     </div>
   );
 };
