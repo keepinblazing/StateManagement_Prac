@@ -1,9 +1,11 @@
-import { FC, createContext, useState, useContext } from "react";
+import { FC } from "react";
+import { useRecoilState } from "recoil";
 import { heights } from "../constants";
-import ResultContext from "../contexts/Result";
+import { resultState } from "../recoil";
 
 const AvgButton: FC = () => {
-  const { actions } = useContext(ResultContext);
+  const [avg, setAvg] = useRecoilState(resultState);
+
   const calculateAvg = () => {
     let sum = heights.reduce((a, c) => a + c);
     return sum / heights.length;
@@ -11,7 +13,7 @@ const AvgButton: FC = () => {
 
   return (
     <div style={{ marginBottom: "10px" }}>
-      <button onClick={() => actions.setResult(calculateAvg())}>평균값</button>
+      <button onClick={() => setAvg(calculateAvg())}>평균값</button>
     </div>
   );
 };

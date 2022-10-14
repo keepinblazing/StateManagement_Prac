@@ -1,13 +1,16 @@
-import { FC, useContext } from "react";
+import { FC } from "react";
+import { useRecoilValue } from "recoil";
 import Prac from "../components/Prac";
-import ResultContext from "../contexts/Result";
+import { resultState } from "../recoil";
+
 
 const Home: FC = () => {
-  const { state } = useContext(ResultContext);
+  const result = useRecoilValue(resultState);  
+
   return (
     <section id="">
       <p style={{ fontSize: "1.25rem", fontWeight: 700 }}>Context API Prac</p>
-      <span>Result: {state.result} </span>
+      <span>Result: {result} </span>
       <Prac />
     </section>
   );
