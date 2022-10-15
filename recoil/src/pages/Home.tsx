@@ -9,7 +9,7 @@ const Home: FC = () => {
 
   return (
     <section id="">
-      <p style={{ fontSize: "1.25rem", fontWeight: 700 }}>Context API Prac</p>
+      <p style={{ fontSize: "1.25rem", fontWeight: 700 }}>Recoil Prac</p>
       <span>Result: {result} </span>
       <Prac />
     </section>
